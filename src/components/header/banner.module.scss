@@ -1,0 +1,89 @@
+@import '../layout/layout.scss';
+
+.header-text-box {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center; /* puts everything inside of it to the center */
+}
+
+.header-text {
+	color: $white;
+	text-transform: uppercase;
+	backface-visibility: hidden;
+	margin-bottom: 6rem;
+
+	&-title {
+		display: block;
+		font-size: 8rem;
+		font-weight: 600;
+		letter-spacing: 3rem;
+		animation-name: fromLeft;
+		animation-duration: 1.5s;
+		animation-timing-function: ease-out;
+	/* 	
+		@include respond(phone) {
+            letter-spacing: 1rem;
+            font-family: 5rem;
+        } */
+	
+	}
+
+	&-sub {
+		display: block;
+		font-size: 2rem;
+		font-weight: 700;
+		letter-spacing: 1.75rem;
+		animation: fromRight 1.5s ease-out;
+/* 		@include respond(phone) {
+            letter-spacing: .5rem;
+        } */
+	}
+}
+
+@keyframes fromLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-10rem);
+	}
+	80% {
+		transform: translate(2rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
+
+@keyframes fromRight {
+	0% {
+		opacity: 0;
+		transform: translateX(10rem);
+	}
+	80% {
+		transform: translate(-2rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
+
+@keyframes fromBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(3rem);
+	}
+	/* 	80% {
+		transform: translate(-20px);
+	} */
+
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
+

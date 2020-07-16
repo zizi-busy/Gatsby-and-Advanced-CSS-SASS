@@ -1,0 +1,97 @@
+.btn {
+	&,
+	&:link,
+	&:visited {
+		text-decoration: none;
+		text-transform: uppercase;
+		padding: 1.5rem 4rem;
+		display: inline-block;
+		border-radius: 10rem;
+		transition: all .3s; /* transition goes to initial state */
+
+		position: relative;
+		font-size: $default-font-size;
+
+		border: none;
+        cursor: pointer;
+	}
+	&:hover {
+		transform: translateY(-0.3rem);
+		box-shadow: 0 1rem 2rem rgba($black, .2);
+
+		&::after {
+			transform: scaleX(1.3) scaleY(1.6);
+			opacity: 0; /* for fading out */
+		}
+	}
+
+	&:active,
+	&:focus {
+		transform: translateY(-0.1rem);
+		box-shadow: 0 .5rem 1rem rgba($black, .2);
+	}
+
+	&--white {
+		background-color: $white;
+		color: $grey-dark;
+
+		&::after {
+			background-color: $white;
+		}
+	}
+
+	&--green {
+        background-color: $primary;
+        color: $white;
+
+        &::after {
+            background-color: $primary;
+        }
+    }
+
+	/* this is just extra */
+	&::after {
+		content: "";
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		border-radius: 10rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		transition: all .4s;
+	}
+
+	&-animated {
+		animation: fromBottom .5s ease-out .75s;
+		animation-fill-mode: backwards; /* helps that button doesnt show before animation start */
+	}
+}
+
+.btn-text{
+	&:link,
+	&:visited {
+		font-size: $default-font-size;
+		color: $primary;
+		display: inline-block;
+		text-decoration: none;
+		border-bottom: 1px solid $primary;
+		padding: 3px;
+		transition: all .2s;
+	}
+
+	&:hover{
+
+		background-color:$primary;
+		color: white;
+		box-shadow: 0 1rem 2rem rgba($black, .2) ;
+		transform: translateY(-2px);
+	}
+	&:active{
+
+		box-shadow: 0 .5rem 1rem rgba($black, .2);
+		transform: translateY(-2px);
+
+	}
+}
