@@ -48,7 +48,7 @@ export default ({ data }) => (
         <div className="logo-container">
           <img src={logo} className="logo" alt="logo" />
         </div>
-        <Banner title="Wilderness" info="is where real freedom lies in." />
+        <Banner title="Wilderness" info="is where real freedom lies" />
       </StyledHero>
 
       <main>
